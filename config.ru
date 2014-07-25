@@ -11,8 +11,13 @@ end
 # authentication
 module Precious
   class App < Sinatra::Base
-    use Rack::Auth::Basic, "Restricted Area" do |username, password|
-      [username, password] == [Settings.auth.username, Settings.auth.password]
+    def self.new(*)
+      app = Rack::Auth::Digest::MD5.new(super) do |username|
+        {Settings.auth.username => Settings.auth.password}[username]
+      end
+      app.realm = 'Restricted Area'
+      app.opaque = ''
+      app
     end
   end
 end
