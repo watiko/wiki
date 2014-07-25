@@ -22,6 +22,16 @@ module Precious
   end
 end
 
+# git user and email
+class Precious::App
+  before do
+    session['gollum.author'] = {
+      :name  => Settings.git.user,
+      :email => Settings.git.email,
+    }
+  end
+end
+
 # gollum
 gollum_path = File.expand_path(File.dirname(__FILE__)) # CHANGE THIS TO POINT TO YOUR OWN WIKI REPO
 Precious::App.set(:gollum_path, gollum_path)

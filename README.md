@@ -12,11 +12,15 @@
 ログを保存するbranchを設定するには、`conf.yml`の`branch`をいれておきます。
 勝手にbranchを作ってくれるかは確認していないので`git checkout -b log`などとしておいてください。
 
+ログに紐付けされる名前とメールアドレスはそれぞれ`user`,`email`で設定します。
+
 ```yaml
 auth:
   username: foo
   password: bar
 git:
+  user: foo
+  email: foo@example.com
   branch: log
 ```
 

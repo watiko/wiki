@@ -2,4 +2,6 @@ auth:
   username:USERNAME
   password:PASSWORD
 git:
+  user: USERNAME
+  email: USERNAME@example.com
   branch: log
