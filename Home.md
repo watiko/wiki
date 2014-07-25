@@ -2,8 +2,8 @@
 
 ## Author
 
-Okumura Takahiro
+watiko
 
-## Mail
+## Contact
 
-hfm.garden \<a\> gmail.com
+twitter - @watiko
