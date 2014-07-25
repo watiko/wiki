@@ -6,12 +6,18 @@
 
 ### 必要なファイル
 
-`auth.yml`というファイルに`username`と`password`をいれときます。
+`conf.yml`というファイルに`username`と`password`をいれときます。
 ※めんどくさい場合は`config.ru`のbasic認証部分を書き換えます。
 
+ログを保存するbranchを設定するには、`conf.yml`の`branch`をいれておきます。
+勝手にbranchを作ってくれるかは確認していないので`git checkout -b log`などとしておいてください。
+
 ```yaml
-username: foo
-password: bar
+auth:
+  username: foo
+  password: bar
+git:
+  branch: log
 ```
 
 ### とりあえず立ち上げる

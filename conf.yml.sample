@@ -1,0 +1,5 @@
+auth:
+  username:USERNAME
+  password:PASSWORD
+git:
+  branch: log

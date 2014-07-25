@@ -5,14 +5,14 @@ require 'gollum/app'
 
 # load auth file
 class Settings < Settingslogic
-  source "auth.yml"
+  source "conf.yml"
 end
 
 # authentication
 module Precious
   class App < Sinatra::Base
     use Rack::Auth::Basic, "Restricted Area" do |username, password|
-      [username, password] == [Settings.username, Settings.password]
+      [username, password] == [Settings.auth.username, Settings.auth.password]
     end
   end
 end
@@ -28,5 +28,6 @@ Precious::App.set(:wiki_options, {
   :allow_uploads => true,
   :universal_toc => true,
   :user_icons    => 'gravatar',
+  :ref           => Settings.git.branch,
 })
 run Precious::App

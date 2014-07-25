@@ -1,6 +1,6 @@
 /.bundle
 /.config
 /vendor
-auth.yml
+conf.yml
 *.log
 Gemfile.lock
